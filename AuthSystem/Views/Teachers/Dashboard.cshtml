@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Teacher Dashboard";
+}
+
+<div class="container mt-5">
+    <h1>Welcome to the Teacher Dashboard</h1>
+    <p>Select an option below to manage:</p>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Students</h5>
+                    <p class="card-text">View and manage student details.</p>
+                    <a href="@Url.Action("Students", "Teacher")" class="btn btn-primary">Go to Students</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Grades</h5>
+                    <p class="card-text">View and assign grades.</p>
+                    <a href="@Url.Action("Grades", "Teacher")" class="btn btn-primary">Go to Grades</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Subjects</h5>
+                    <p class="card-text">Manage subjects for the class.</p>
+                    <a href="@Url.Action("Subjects", "Teacher")" class="btn btn-primary">Go to Subjects</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Marks</h5>
+                    <p class="card-text">Record and view marks.</p>
+                    <a href="@Url.Action("Marks", "Teacher")" class="btn btn-primary">Go to Marks</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

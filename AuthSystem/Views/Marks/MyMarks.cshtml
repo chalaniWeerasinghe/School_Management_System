@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AuthSystem.Models.Mark>
+
+<h1>My Marks</h1>
+
+@if (!Model.Any())
+{
+    <p>You have no marks recorded yet.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Numeric Mark</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mark in Model)
+            {
+                <tr>
+                    <td>@mark.Subject.SubjectName</td>
+                    <td>@mark.NumericMark</td>
+                    <td>@mark.Grade.GradeName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

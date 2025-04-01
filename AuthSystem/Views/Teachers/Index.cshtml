@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AuthSystem.Areas.Identity.Data.ApplicationUser>
+
+<h1>Teachers</h1>
+
+<a href="@Url.Action("Create", "Teachers")" class="btn btn-primary mb-3">Create New Teacher</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Employee Number</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model)
+        {
+            <tr>
+                <td>@teacher.Email</td>
+                <td>@teacher.FirstName</td>
+                <td>@teacher.LastName</td>
+                <td>@teacher.EmployeeNumber</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Teachers", new { id = teacher.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Teachers", new { id = teacher.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

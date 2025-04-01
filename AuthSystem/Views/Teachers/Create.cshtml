@@ -1,0 +1,32 @@
+﻿@model AuthSystem.Areas.Identity.Data.ApplicationUser
+
+<h1>Create Teacher</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="firstName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="lastName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Birth Date</label>
+        <input type="date" name="birthDate" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Employee Number</label>
+        <input type="text" name="employeeNumber" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+

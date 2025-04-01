@@ -1,0 +1,49 @@
+﻿<h1>Add Mark</h1>
+<form asp-action="Create" method="post">
+    <!-- Student Dropdown -->
+    <div class="form-group">
+        <label for="student">Student</label>
+        <select name="studentId" class="form-control" required>
+            @if (ViewBag.Students != null && (ViewBag.Students as List<AuthSystem.Areas.Identity.Data.ApplicationUser>).Count > 0)
+            {
+                foreach (var student in ViewBag.Students as List<AuthSystem.Areas.Identity.Data.ApplicationUser>)
+                {
+                    <option value="@student.Id">@student.FirstName @student.LastName</option>
+                }
+            }
+            else
+            {
+                <option disabled>No students available</option>
+            }
+        </select>
+    </div>
+
+    <!-- Subject Dropdown -->
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <select name="subjectId" class="form-control" required>
+            @if (ViewBag.Subjects != null && (ViewBag.Subjects as List<AuthSystem.Models.Subject>).Count > 0)
+            {
+                foreach (var subject in ViewBag.Subjects as List<AuthSystem.Models.Subject>)
+                {
+                    <option value="@subject.SubjectId">@subject.SubjectName</option>
+                }
+            }
+            else
+            {
+                <option disabled>No subjects available</option>
+            }
+        </select>
+    </div>
+
+    <!-- Numeric Mark Input -->
+    <div class="form-group">
+        <label for="numericMark">Numeric Mark</label>
+        <input type="number" name="numericMark" class="form-control" min="0" max="100" required />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+

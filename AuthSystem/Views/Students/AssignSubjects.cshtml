@@ -1,0 +1,29 @@
+﻿@model AssignSubjectsViewModel
+
+<h1>Assign Subjects to Students</h1>
+<form asp-action="AssignSubjects" method="post">
+    <div class="form-group">
+        <label for="userId">Select User</label>
+        <select name="userId" class="form-control" required>
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Id">@user.UserName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="subjectIds">Select Subjects</label>
+        @foreach (var subject in Model.Subjects)
+        {
+            <div>
+                <input type="checkbox" name="subjectIds" value="@subject.SubjectId" />
+                @subject.SubjectName
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Assign</button>
+</form>
+
+

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<AuthSystem.Models.Mark>
+
+<h1>Marks</h1>
+<a asp-action="Create" class="btn btn-primary">Add Mark</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Subject</th>
+            <th>Numeric Mark</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mark in Model)
+        {
+            <tr>
+                <!-- Display Student's Full Name -->
+                <td>@mark.Student.FirstName @mark.Student.LastName</td>
+
+                <!-- Display Subject Name -->
+                <td>@mark.Subject.SubjectName</td>
+
+                <!-- Display Numeric Mark -->
+                <td>@mark.NumericMark</td>
+
+                <!-- Display Grade -->
+                <td>@mark.Grade.GradeName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

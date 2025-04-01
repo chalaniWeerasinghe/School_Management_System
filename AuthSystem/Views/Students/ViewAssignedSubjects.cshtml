@@ -1,0 +1,15 @@
+﻿<h1>Assign Subjects to User</h1>
+<form asp-action="AssignSubjects" method="post">
+    <input type="hidden" name="userId" value="@Model.UserId" />
+    <div class="form-group">
+        <label for="subjects">Select Subjects</label>
+        <select name="subjectIds" multiple class="form-control">
+            @foreach (var subject in ViewBag.Subjects)
+            {
+                <option value="@subject.SubjectId">@subject.SubjectName</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Assign</button>
+</form>
+
