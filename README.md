@@ -1,5 +1,4 @@
-# School Management System
-# ASP.NET Core Practice Project
+# School Management System (ASP.NET + Blazor)
 
 ## Overview
 This is a **practice project** developed using **ASP.NET Core** to enhance skills in web development, database management, and authentication systems. The project covers multiple essential concepts of ASP.NET Core, including **Blazor, Entity Framework Core, SQL, ASP.NET Core Identity, and MAUI**.
